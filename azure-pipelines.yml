@@ -23,5 +23,5 @@ steps:
 
   - script: |
       echo "Running Python script..."
-      python add_numbers.py ${{ parameters.num1 }} ${{ parameters.num2 }}
+      python test.py ${{ parameters.num1 }} ${{ parameters.num2 }}
     displayName: 'Run Python addition script'
