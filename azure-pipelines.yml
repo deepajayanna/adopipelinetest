@@ -13,7 +13,7 @@ parameters:
     default: '7'
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
   - task: UsePythonVersion@0
