@@ -1,0 +1,27 @@
+# azure-pipelines.yml
+trigger: none   # We'll run manually
+
+parameters:
+  - name: num1
+    displayName: 'First number'
+    type: string
+    default: '5'
+
+  - name: num2
+    displayName: 'Second number'
+    type: string
+    default: '7'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.x'
+    displayName: 'Set up Python'
+
+  - script: |
+      echo "Running Python script..."
+      python add_numbers.py ${{ parameters.num1 }} ${{ parameters.num2 }}
+    displayName: 'Run Python addition script'
